@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "eslint pages components context util --ext .ts,.tsx"
   },
+  "author": "Sivadass zjusticy",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
     "next": "9.4.4",

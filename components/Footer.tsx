@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <p className="footer-links">
         <a
-          href="https://github.com/sivadass/react-shopping-cart"
+          href="https://github.com/zjusticy/next-shopping-cart"
           target="_blank"
           rel="noreferrer"
         >
