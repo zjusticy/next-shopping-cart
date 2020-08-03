@@ -1,30 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next Shopping Cart
+
+Simple  shopping cart using Nextjs, Hook and Typescript.
+
+Based on this project [react-shopping-cart](https://github.com/sivadass/react-shopping-cart).
+
+![](https://github.com/zjusticy/imgs_lib/blob/master/next-react-shopping-cart.gif)
+
+## Live Demo
+
+https://next-shopping-cart.vercel.app
 
 ## Getting Started
 
-First, run the development server:
+First, goto the project folder and install required dependencies:
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+Then to get start by typing:
+
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js, take a look at the following blog:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Blog](https://zjusticy.github.io/blog/next-react-shopping-cart)
