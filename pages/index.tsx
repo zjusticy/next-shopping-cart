@@ -1,5 +1,5 @@
 import React, { useState, FunctionComponent } from "react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 
 import axios from "axios";
 
@@ -74,7 +74,7 @@ const Home: FunctionComponent<{ products: Product[] }> = ({
 };
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const url =
     "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
   const res = await axios.get(url);
