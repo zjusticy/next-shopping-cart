@@ -21,7 +21,10 @@
     padding: 8px;
   }
   .product {
-    display: inline-block;
+    // display: inline-block;
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
     // min-height: 355px;
     // flex-basis: calc(25% - 32px);
     // flex: 1 0 0;
@@ -173,10 +176,7 @@
 }
 
 .product-wrapper {
-  transition: 0.5s;
-  &:hover {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  }
+  // transition: 0.5s;
   padding: 16px;
   min-height: 355px;
   min-width: 154px;
