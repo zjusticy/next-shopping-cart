@@ -115,7 +115,7 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
         className={`${styles.cartPreview} ${styles.active}`}
         ref={cartPreview}
       >
-        <CartScrollBar refer={cartPreview}>{view}</CartScrollBar>
+        <CartScrollBar>{view}</CartScrollBar>
         <div className={styles.actionBlock}>
           <button
             type="button"
