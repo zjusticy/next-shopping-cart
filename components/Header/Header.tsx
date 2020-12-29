@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import CartScrollBar from "./CartScrollBar";
-import EmptyCart from "./empty-states/EmptyCart";
-import { CartContext, Init, Product } from "../context/ShoppingCart";
+import CartScrollBar from "../CartScrollBar/CartScrollBar";
+import EmptyCart from "../empty-states/EmptyCart/EmptyCart";
+import { CartContext, Init, Product } from "../../context/ShoppingCart";
+import styles from "./Header.module.scss";
 
-import useClickOutside from "../util/clickOutside";
+import useClickOutside from "../../util/clickOutside";
 
 /* eslint-disable consistent-return */
 
@@ -68,20 +69,24 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
           exit: 300,
         }}
       >
-        <li className="cart-item" key={product.name}>
-          <img className="product-image" src={product.image} alt="product" />
-          <div className="product-info">
-            <p className="product-name">{product.name}</p>
-            <p className="product-price">{product.price}</p>
+        <li className={styles.cartItem} key={product.name}>
+          <img
+            className={styles.productImage}
+            src={product.image}
+            alt="product"
+          />
+          <div className={styles.productInfo}>
+            <p className={styles.productName}>{product.name}</p>
+            <p className={styles.productPrice}>{product.price}</p>
           </div>
-          <div className="product-total">
-            <p className="quantity">
+          <div className={styles.productTotal}>
+            <p className={styles.quantity}>
               {product.quantity} {product.quantity > 1 ? "Nos." : "No."}{" "}
             </p>
-            <p className="amount">{product.quantity * product.price}</p>
+            <p className={styles.amount}>{product.quantity * product.price}</p>
           </div>
           <button
-            className="product-remove"
+            className={styles.productRemove}
             onClick={() => removeProduct(product.id)}
             type="button"
           >
@@ -96,25 +101,46 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
     view = <EmptyCart />;
   } else {
     view = (
-      <TransitionGroup component="ul" className="cart-items">
+      <TransitionGroup component="ul" className={styles.cartItems}>
         {cartItems}
       </TransitionGroup>
     );
   }
+
+  let cartBox = null;
+
+  if (showCart)
+    cartBox = (
+      <div
+        className={`${styles.cartPreview} ${styles.active}`}
+        ref={cartPreview}
+      >
+        <CartScrollBar refer={cartPreview}>{view}</CartScrollBar>
+        <div className={styles.actionBlock}>
+          <button
+            type="button"
+            className={cart.length > 0 ? " " : styles.disabled}
+          >
+            PROCEED TO CHECKOUT
+          </button>
+        </div>
+      </div>
+    );
+
   return (
-    <header>
-      <div className="container">
-        <div className="brand">
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.brand}>
           <img
-            className="logo"
+            className={styles.logo}
             src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"
             alt="Veggy Brand Logo"
           />
         </div>
 
-        <div className="search">
+        <div className={styles.search}>
           <button
-            className="mobile-search"
+            className={styles.mobileSearch}
             onClick={handleMobileSearch}
             type="button"
           >
@@ -126,10 +152,14 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
           <form
             action="#"
             method="get"
-            className={mobileSearch ? "search-form active" : "search-form"}
+            className={
+              mobileSearch
+                ? `${styles.searchForm} ${styles.active}`
+                : `${styles.searchForm}`
+            }
           >
             <button
-              className="back-button"
+              className={styles.backButton}
               onClick={handleSearchNav}
               type="button"
             >
@@ -141,12 +171,12 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
             <input
               type="search"
               placeholder="Search for Vegetables and Fruits"
-              className="search-keyword"
+              className={styles.searchKeyword}
               value={searchValue}
               onChange={handleSearch}
             />
             <button
-              className="search-button"
+              className={styles.searchButton}
               type="submit"
               onClick={handleSubmit}
               aria-label="submit"
@@ -154,8 +184,8 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
           </form>
         </div>
 
-        <div className="cart">
-          <div className="cart-info">
+        <div className={styles.cart}>
+          <div className={styles.cartInfo}>
             <table>
               <tbody>
                 <tr>
@@ -175,28 +205,23 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
               </tbody>
             </table>
           </div>
-          <button className="cart-icon" onClick={handleCart} type="button">
+          <button
+            className={styles.cartIcon}
+            onClick={handleCart}
+            type="button"
+          >
             <img
-              className={bounce ? "tada" : " "}
+              className={bounce ? styles.tada : " "}
               src="https://res.cloudinary.com/sivadass/image/upload/v1493548928/icons/bag.png"
               alt="Cart"
             />
-            {totalItems ? <span className="cart-count">{totalItems}</span> : ""}
+            {totalItems ? (
+              <span className={styles.cartCount}>{totalItems}</span>
+            ) : (
+              ""
+            )}
           </button>
-          <div
-            className={showCart ? "cart-preview active" : "cart-preview"}
-            ref={cartPreview}
-          >
-            <CartScrollBar>{view}</CartScrollBar>
-            <div className="action-block">
-              <button
-                type="button"
-                className={cart.length > 0 ? " " : "disabled"}
-              >
-                PROCEED TO CHECKOUT
-              </button>
-            </div>
-          </div>
+          {cartBox}
         </div>
       </div>
     </header>

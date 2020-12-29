@@ -3,17 +3,18 @@ import { useEffect } from "react";
 const useClickOutside = (
   closeModel: () => void,
   ref: React.RefObject<HTMLDivElement>,
+  // Added to prevent event propagating to buttons
   activeCheck: boolean
 ) => {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (activeCheck && ref.current.classList.contains("active")) {
-        if (!ref || !ref.current.contains(e.target as Element)) {
-          // inside click
-          closeModel();
+      if (ref && ref.current && !ref.current.contains(e.target as Element)) {
+        if (activeCheck) {
           e.stopPropagation();
         }
-      } else if (!ref || !ref.current.contains(e.target as Element)) {
+        // if (activeCheck && ref.current.classList.contains("active")) {
+        // inside click
+
         closeModel();
       }
     };

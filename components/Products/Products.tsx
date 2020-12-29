@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import ProductItem from "./ProductItem";
-import LoadingProducts from "./loaders/Products";
-import NoResults from "./empty-states/NoResults";
+import ProductItem from "./ProductItem/ProductItem";
+// import LoadingProducts from "./loaders/Products";
+import NoResults from "../empty-states/NoResults/NoResults";
+import styles from "./Products.module.scss";
 import {
   CartContext,
   Init,
   Product,
   QuickPreview,
-} from "../context/ShoppingCart";
+} from "../../context/ShoppingCart";
 
 type Props = {
   searchTerm: string;
@@ -57,18 +58,19 @@ const Products = ({ searchTerm, productsList, openModal }: Props) => {
 
   // Empty and Loading States
   let view;
-  if (productsData.length <= 0 && !term) {
-    view = <LoadingProducts />;
-  } else if (productsData.length <= 0 && term) {
+  // if (productsData.length <= 0 && !term) {
+  //   view = <LoadingProducts />;
+  // } else
+  if (productsData.length <= 0 && term) {
     view = <NoResults />;
   } else {
     view = (
-      <TransitionGroup component="div" className="products">
+      <TransitionGroup component="div" className={styles.products}>
         {productsData}
       </TransitionGroup>
     );
   }
-  return <div className="products-wrapper">{view}</div>;
+  return <div className={styles.productsWrapper}>{view}</div>;
 };
 
 export default Products;

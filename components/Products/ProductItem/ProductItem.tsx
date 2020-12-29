@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Counter from "./Counter";
+import Counter from "../../Counter/Counter";
+import styles from "./ProductItem.module.scss";
 
-import { Product, QuickPreview } from "../context/ShoppingCart";
+import { Product, QuickPreview } from "../../../context/ShoppingCart";
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable consistent-return */
@@ -74,26 +75,28 @@ const ProductItem = ({
 
   // let quantity = props.productQuantity;
   return (
-    <div className="product-wrapper">
-      <div className="product">
-        <div
-          className="product-image"
-          onClick={() => quickView(image, name, price, id)}
-          role="button"
-        >
-          <img src={image} alt={name} />
-        </div>
-        <h4 className="product-name">{name}</h4>
-        <p className="product-price">{price}</p>
-        <Counter productQuantity={quantity} updateQuantity={updateQuantity} />
-        <div className="product-action">
-          <button
-            className={!isAdded ? "" : "added"}
-            type="button"
-            onClick={() => addButtonClicked(image, name, price, id, quantity)}
+    <div className={styles.productWrapper}>
+      <div className={styles.product}>
+        <div className={styles.outline}>
+          <div
+            className={styles.productImage}
+            onClick={() => quickView(image, name, price, id)}
+            role="button"
           >
-            {!isAdded ? "ADD TO CART" : "✔ ADDED"}
-          </button>
+            <img src={image} alt={name} />
+          </div>
+          <h4 className={styles.productName}>{name}</h4>
+          <p className={styles.productPrice}>{price}</p>
+          <Counter productQuantity={quantity} updateQuantity={updateQuantity} />
+          <div className={styles.productAction}>
+            <button
+              className={!isAdded ? "" : styles.added}
+              type="button"
+              onClick={() => addButtonClicked(image, name, price, id, quantity)}
+            >
+              {!isAdded ? "ADD TO CART" : "✔ ADDED"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

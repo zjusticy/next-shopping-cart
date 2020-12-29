@@ -3,10 +3,10 @@ import { GetStaticProps } from "next";
 
 import axios from "axios";
 
-import Header from "../components/Header";
-import Products from "../components/Products";
-import Footer from "../components/Footer";
-import QuickView from "../components/QuickView";
+import Header from "../components/Header/Header";
+import Products from "../components/Products/Products";
+import Footer from "../components/Footer/Footer";
+import QuickView from "../components/QuickView/QuickView";
 
 import { Product, QuickPreview } from "../context/ShoppingCart";
 
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
     "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
   const res = await axios.get(url);
 
-  const data = await res.data;
+  // const data = await res.data;
 
-  return { props: { products: data } };
+  return { props: { products: res.data } };
 };

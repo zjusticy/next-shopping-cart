@@ -1,13 +1,16 @@
-header {
+@import "../../scss/colors";
+@import "../../scss/mixins";
+
+.header {
   background: $white;
   padding: 30px 32px;
   box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.033);
-  position: fixed;
-  top: 0;
+  // position: fixed;
+  // top: 0;
   width: 100%;
-  z-index: 100;
-  animation: slideUp 300ms linear;
-  .container {
+  // z-index: 100;
+  // animation: slideUp 300ms linear;
+  & .container {
     display: flex;
     display: -webkit-flex;
     max-width: 960px;
@@ -35,6 +38,14 @@ header {
   }
 }
 // Logo
+.brand {
+  height: 100%;
+  text-align: center;
+  @media (max-width: 480px) {
+    margin-left: 8px;
+  }
+}
+
 .brand .logo {
   width: 123px;
   @media (max-width: 480px) {
@@ -57,7 +68,7 @@ header {
     margin-left: auto;
   }
 }
-.search-form {
+.searchForm {
   display: flex;
   display: -webkit-flex;
   @media (max-width: 480px) {
@@ -74,7 +85,7 @@ header {
       display: -webkit-flex;
     }
   }
-  .search-keyword {
+  .searchKeyword {
     -webkit-appearance: none;
     height: 36px;
     // line-height: 36px;
@@ -93,7 +104,7 @@ header {
       margin: 2px 0;
     }
   }
-  .search-button {
+  .searchButton {
     height: 36px;
     border-radius: 0 2px 2px 0;
     border: 0;
@@ -109,18 +120,18 @@ header {
   }
 }
 @media (min-width: 481px) {
-  .mobile-search,
-  .back-button {
+  .mobileSearch,
+  .backButton {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  .mobile-search {
+  .mobileSearch {
     display: block;
     height: 36px;
     width: 36px;
   }
-  .back-button {
+  .backButton {
     display: block;
     margin-right: 8px;
   }
@@ -137,12 +148,12 @@ header {
     margin-left: 16px;
   }
 }
-.cart-info {
+.cartInfo {
   @media (max-width: 991px) {
     display: none;
   }
 }
-.cart-info table {
+.cartInfo table {
   font-size: 14px;
   color: $primary-green;
   text-align: right;
@@ -155,7 +166,7 @@ header {
     line-height: 16px;
   }
 }
-.cart-icon {
+.cartIcon {
   padding: 0;
   margin: 0px 0px 0px 16px;
   z-index: 99;
@@ -164,8 +175,12 @@ header {
   cursor: pointer;
   background: none;
   font-size: 16px;
+  @media (max-width: 991px) {
+    margin: 0px 8px 0px 16px;
+  }
 }
-.cart-count {
+
+.cartCount {
   @media (min-width: 992px) {
     display: none;
   }
@@ -184,8 +199,8 @@ header {
     right: -9px;
   }
 }
-.cart-preview {
-  display: none;
+.cartPreview {
+  // display: none;
   background: $white;
   border: 1px solid $gray-eighty;
   &:before {
@@ -215,14 +230,14 @@ header {
     z-index: 1;
   }
 }
-.cart-preview.active {
+.cartPreview.active {
   z-index: 99;
   display: block;
   position: absolute;
   top: 48px;
   right: 0;
   width: 360px;
-  height: 388px;
+  height: 420px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   @media (max-width: 400px) {
     top: 45px;
@@ -231,7 +246,7 @@ header {
     & > div {
       width: 100% !important;
     }
-    .cart-items {
+    .cartItems {
       width: 100%;
     }
     .stepper-input {
@@ -242,7 +257,7 @@ header {
   }
 }
 
-.action-block {
+.actionBlock {
   background: $white;
   position: absolute;
   bottom: 0;
@@ -259,40 +274,29 @@ header {
     }
   }
 }
-.empty-cart {
-  text-align: center;
-  img {
-    width: 100%;
-    max-width: 250px;
-    margin: 42px auto 16px auto;
-  }
-  h2 {
-    color: $gray-light;
-    font-size: 18px;
-  }
-}
-.cart-items {
+
+.cartItems {
   height: 320px;
   width: 360px;
 }
-.cart-item {
+.cartItem {
   display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
   padding: 8px;
-  .product-image {
+  .productImage {
     width: 48px;
     height: 48px;
   }
-  .product-info {
+  .productInfo {
     margin-left: 16px;
     flex-grow: 1;
-    .product-name {
+    .productName {
       color: $gray-light;
       font-size: 14px;
     }
-    .product-price {
+    .productPrice {
       color: $gray-light;
       font-weight: 700;
       &:before {
@@ -300,7 +304,7 @@ header {
       }
     }
   }
-  .product-total {
+  .productTotal {
     margin-left: 16px;
     .quantity {
       color: $gray-light;
@@ -316,7 +320,7 @@ header {
       }
     }
   }
-  .product-remove {
+  .productRemove {
     border: none;
     cursor: pointer;
     margin-left: 24px;

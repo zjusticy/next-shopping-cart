@@ -1,9 +1,10 @@
 import React from "react";
+import styles from "./NoResults.module.scss";
 
 const NoResults = () => {
   return (
-    <div className="products">
-      <div className="no-results">
+    <div className={styles.products}>
+      <div className={styles.noResults}>
         <img
           src="https://res.cloudinary.com/sivadass/image/upload/v1494699523/icons/bare-tree.png"
           alt="Empty Tree"

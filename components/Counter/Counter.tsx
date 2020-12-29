@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Counter.module.scss";
 
 type Props = {
   productQuantity: number;
@@ -25,17 +26,17 @@ const Counter = ({ productQuantity, updateQuantity }: Props) => {
   // };
 
   return (
-    <div className="stepper-input">
-      <button className="decrement" onClick={decrement} type="button">
+    <div className={styles.stepperInput}>
+      <button className={styles.decrement} onClick={decrement} type="button">
         –
       </button>
       <input
         type="number"
-        className="quantity"
+        className={styles.quantity}
         value={productQuantity}
         onChange={feed}
       />
-      <button className="increment" onClick={increment} type="button">
+      <button className={styles.increment} onClick={increment} type="button">
         +
       </button>
     </div>

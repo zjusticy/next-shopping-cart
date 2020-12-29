@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <p className="footer-links">
         <a
           href="https://github.com/zjusticy/next-shopping-cart"

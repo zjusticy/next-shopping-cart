@@ -1,5 +1,9 @@
-.modal-wrapper {
-  display: none;
+@import "../../scss/colors";
+@import "../../scss/mixins";
+
+.modalWrapper {
+  display: flex;
+  visibility: hidden;
   background: rgba(0, 0, 0, 0.66);
   position: fixed;
   top: 0;
@@ -8,7 +12,8 @@
   width: 100%;
   overflow-y: hidden;
   &.active {
-    display: flex;
+    // display: flex;
+    visibility: visible;
     display: -webkit-flex;
     align-items: center;
     justify-content: center;
@@ -36,18 +41,17 @@
     &:hover {
       background: $gray-dark-bg;
     }
-
-
   }
 }
-.quick-view-details {
+
+.quickViewDetails {
   padding: 24px;
   background: $gray-medium-bg;
   border-radius: 0 0 4px 4px;
   .product-price {
     font-size: 18px;
   }
-  .product-price {
+  .productPrice {
     color: $primary-green;
     font-weight: bold;
     font-size: 24px;
@@ -57,7 +61,8 @@
     }
   }
 }
-.quick-view-image {
+
+.quickViewImage {
   img {
     width: 100%;
     max-width: 500px;
