@@ -2,7 +2,7 @@
 
 import type { Init } from "./ShoppingCart";
 
-export default (state: Init, action) => {
+const cartReducer = (state: Init, action) => {
   switch (action.type) {
     case "REMOVE_PRODUCT": {
       const newCart = state.cart.filter((x) => x.id !== action.payload);
@@ -49,3 +49,5 @@ export default (state: Init, action) => {
       return state;
   }
 };
+
+export default cartReducer;

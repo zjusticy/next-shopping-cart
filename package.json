@@ -11,7 +11,7 @@
   "author": "Sivadass zjusticy",
   "license": "MIT",
   "dependencies": {
-    "next": "9.4.4",
+    "next": "^10.0.4",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-custom-scrollbars": "^4.2.1",
