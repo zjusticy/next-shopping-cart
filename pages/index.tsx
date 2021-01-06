@@ -1,7 +1,7 @@
 import React, { useState, FunctionComponent } from "react";
 import { GetStaticProps } from "next";
 
-import axios from "axios";
+// import axios from "axios";
 
 import Header from "../components/Header/Header";
 import Products from "../components/Products/Products";
@@ -77,9 +77,11 @@ export default Home;
 export const getStaticProps: GetStaticProps = async () => {
   const url =
     "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
-  const res = await axios.get(url);
+  // const res = await axios.get(url);
+  const res = await fetch(url);
 
+  const data = await res.json();
   // const data = await res.data;
 
-  return { props: { products: res.data } };
+  return { props: { products: data } };
 };
