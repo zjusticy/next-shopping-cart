@@ -8,13 +8,9 @@ import Products from "../components/Products/Products";
 import Footer from "../components/Footer/Footer";
 import QuickView from "../components/QuickView/QuickView";
 
-import { Product, QuickPreview } from "../context/ShoppingCart";
+import { ProductWeb, QuickPreview } from "../context/ShoppingCart";
 
-const Home: FunctionComponent<{ products: Product[] }> = ({
-  products,
-}: {
-  products: Product[];
-}) => {
+const Home: FunctionComponent<{ products: ProductWeb[] }> = ({ products }) => {
   const [term, setTerm] = useState<string>("");
 
   const [modalActive, flipModelState] = useState<boolean>(false);
