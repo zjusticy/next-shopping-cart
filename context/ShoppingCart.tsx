@@ -1,13 +1,17 @@
 import React, { createContext, useReducer } from "react";
 import CartReducer from "./CartReducer";
 
-export type Product = {
-  id: number;
+type Product = {
   price: number;
   image: string;
   name: string;
   quantity: number;
+  unit: string;
 };
+
+export type ProductWeb = Product & { id: string };
+
+export type ProductLocal = Product & { id: number };
 
 export type QuickPreview = {
   id: number;
@@ -17,12 +21,12 @@ export type QuickPreview = {
 };
 
 export interface Init {
-  cart: Product[];
+  cart: ProductLocal[];
   totalItems: number;
   totalAmount: number;
   bounce: boolean;
   removeProduct?: (id: number) => void;
-  addProduct?: (selectedProducts: Product) => void;
+  addProduct?: (selectedProducts: ProductLocal) => void;
   bouceEnd?: () => void;
 }
 

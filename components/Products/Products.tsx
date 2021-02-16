@@ -7,13 +7,13 @@ import styles from "./Products.module.scss";
 import {
   CartContext,
   Init,
-  Product,
+  ProductWeb,
   QuickPreview,
 } from "../../context/ShoppingCart";
 
 type Props = {
   searchTerm: string;
-  productsList: Product[];
+  productsList: ProductWeb[];
   openModal: (prodect: QuickPreview) => void;
 };
 
@@ -47,7 +47,8 @@ const Products = ({ searchTerm, productsList, openModal }: Props) => {
             price={product.price}
             name={product.name}
             image={product.image}
-            id={product.id}
+            id={parseInt(product.id, 10)}
+            unit={product.unit}
             addToCart={addProduct}
             // productQuantity={props.productQuantity}
             openModal={openModal}

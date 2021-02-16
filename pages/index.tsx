@@ -76,7 +76,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const url =
-    "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
+    "https://script.google.com/macros/s/AKfycbwrtpxP95JWg2GghdxdxXDltiL101EWGhOGaJZZ0rRmedAow0t4hrQ4/exec";
   // const res = await axios.get(url);
   const res = await fetch(url);
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Counter from "../../Counter/Counter";
 import styles from "./ProductItem.module.scss";
 
-import { Product, QuickPreview } from "../../../context/ShoppingCart";
+import { ProductLocal, QuickPreview } from "../../../context/ShoppingCart";
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable consistent-return */
@@ -10,12 +10,13 @@ import { Product, QuickPreview } from "../../../context/ShoppingCart";
 /* eslint-disable  jsx-a11y/interactive-supports-focus */
 
 type Props = {
-  addToCart: (prodect: Product) => void;
+  addToCart: (prodect: ProductLocal) => void;
   openModal: (prodect: QuickPreview) => void;
   id: number;
   price: number;
   image: string;
   name: string;
+  unit: string;
 };
 
 const ProductItem = ({
@@ -25,6 +26,7 @@ const ProductItem = ({
   price,
   image,
   name,
+  unit,
 }: Props) => {
   const [quantity, updateQuantity] = useState<number>(1);
   const [isAdded, setAddState] = useState<boolean>(false);
@@ -45,6 +47,7 @@ const ProductItem = ({
     nameLocal: string,
     priceLocal: number,
     idLocal: number,
+    unitLocal: string,
     quantityLocal: number
   ) => {
     const selectedProduct = {
@@ -53,6 +56,7 @@ const ProductItem = ({
       price: priceLocal,
       id: idLocal,
       quantity: quantityLocal,
+      unit: unitLocal,
     };
     addToCart(selectedProduct);
     setAddState(true);
@@ -85,14 +89,16 @@ const ProductItem = ({
           >
             <img src={image} alt={name} />
           </div>
-          <h4 className={styles.productName}>{name}</h4>
+          <h4 className={styles.productName}>{`${name} - ${unit}`}</h4>
           <p className={styles.productPrice}>{price}</p>
           <Counter productQuantity={quantity} updateQuantity={updateQuantity} />
           <div className={styles.productAction}>
             <button
               className={!isAdded ? "" : styles.added}
               type="button"
-              onClick={() => addButtonClicked(image, name, price, id, quantity)}
+              onClick={() =>
+                addButtonClicked(image, name, price, id, unit, quantity)
+              }
             >
               {!isAdded ? "ADD TO CART" : "✔ ADDED"}
             </button>
