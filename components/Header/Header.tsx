@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import CartScrollBar from "../CartScrollBar/CartScrollBar";
 import EmptyCart from "../empty-states/EmptyCart/EmptyCart";
-import { CartContext, Init, Product } from "../../context/ShoppingCart";
+import { CartContext, Init, ProductLocal } from "../../context/ShoppingCart";
 import styles from "./Header.module.scss";
 
 import useClickOutside from "../../util/clickOutside";
@@ -59,7 +59,7 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
 
   useClickOutside(() => flipState(false), cartPreview, true);
 
-  const cartItems = cart.map((product: Product) => {
+  const cartItems = cart.map((product: ProductLocal) => {
     return (
       <CSSTransition
         key={product.id}
