@@ -35,4 +35,4 @@ To learn more about Next.js, take a look at the following blog:
 
 We also use Google Sheets as CMS for this simple site. For detail, you can check this blog:
 
-[Google Sheets as CMS](https://zjusticy.github.io/blog/next-react-shopping-cart)
+[Google Sheets as CMS](https://zjusticy.github.io/blog/sheet-to-site)
