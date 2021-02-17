@@ -32,3 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To learn more about Next.js, take a look at the following blog:
 
 [Blog](https://zjusticy.github.io/blog/next-react-shopping-cart)
+
+We also use Google Sheets as CMS for this simple site. For detail, you can check this blog:
+
+[Google Sheets as CMS](https://zjusticy.github.io/blog/next-react-shopping-cart)
