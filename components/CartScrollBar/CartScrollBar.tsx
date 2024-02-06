@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 import { Scrollbars } from "react-custom-scrollbars";
-import useLockBodyScroll from "../../util/preventScroll";
+import useLockBodyScroll from "@/util/preventScroll";
 
 type Props = {
   children: ReactNode;

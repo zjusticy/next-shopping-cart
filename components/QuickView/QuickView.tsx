@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 
-import useClickOutside from "../../util/clickOutside";
-import styles from "./QuickView.module.scss";
+import useClickOutside from "@/util/clickOutside";
+import { QuickPreview } from "@/context/ShoppingCart";
 
-import { QuickPreview } from "../../context/ShoppingCart";
+import styles from "./QuickView.module.scss";
 
 type Props = {
   closeModal: () => void;

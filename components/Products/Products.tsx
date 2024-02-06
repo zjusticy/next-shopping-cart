@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import ProductItem from "./ProductItem/ProductItem";
-// import LoadingProducts from "./loaders/Products";
-import NoResults from "../empty-states/NoResults/NoResults";
-import styles from "./Products.module.scss";
+import NoResults from "@/components/empty-states/NoResults/NoResults";
 import {
   CartContext,
   Init,
   ProductWeb,
   QuickPreview,
-} from "../../context/ShoppingCart";
+} from "@/context/ShoppingCart";
+
+import ProductItem from "./ProductItem/ProductItem";
+import styles from "./Products.module.scss";
 
 type Props = {
   searchTerm: string;

@@ -1,11 +1,11 @@
-import "../scss/base.scss";
+import "@/scss/base.scss";
 
 import React from "react";
 
 import Head from "next/head";
-import { DEFAULT_SEO } from "../config";
+import { DEFAULT_SEO } from "@/config";
 
-import { CartProvider } from "../context/ShoppingCart";
+import { CartProvider } from "@/context/ShoppingCart";
 
 /* eslint-disable react/jsx-props-no-spreading */
 

@@ -1,5 +1,5 @@
-@import "../../scss/colors";
-@import "../../scss/mixins";
+@import "@/scss/colors";
+@import "@/scss/mixins";
 
 .modalWrapper {
   display: flex;
@@ -57,7 +57,7 @@
     font-size: 24px;
     float: right;
     &:before {
-      content: "₹ ";
+      content: "$ ";
     }
   }
 }

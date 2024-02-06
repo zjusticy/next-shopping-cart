@@ -1,5 +1,5 @@
-@import "../../../scss/colors";
-@import "../../../scss/mixins";
+@import "@/scss/colors";
+@import "@/scss/mixins";
 
 .product {
   background: $white;
@@ -44,7 +44,7 @@
     line-height: 22px;
     margin-bottom: 16px;
     &:before {
-      content: "₹ ";
+      content: "$ ";
     }
   }
   .productName,

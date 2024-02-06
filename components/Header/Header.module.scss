@@ -1,5 +1,5 @@
-@import "../../scss/colors";
-@import "../../scss/mixins";
+@import "@/scss/colors";
+@import "@/scss/mixins";
 
 .header {
   background: $white;
@@ -300,7 +300,7 @@
       color: $gray-light;
       font-weight: 700;
       &:before {
-        content: "₹ ";
+        content: "$ ";
       }
     }
   }
@@ -316,7 +316,7 @@
       font-weight: 700;
       text-align: right;
       &:before {
-        content: "₹ ";
+        content: "$ ";
       }
     }
   }

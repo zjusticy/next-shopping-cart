@@ -3,10 +3,10 @@ import { GetStaticProps } from "next";
 
 // import axios from "axios";
 
-import Header from "../components/Header/Header";
-import Products from "../components/Products/Products";
-import Footer from "../components/Footer/Footer";
-import QuickView from "../components/QuickView/QuickView";
+import Header from "@/components/Header/Header";
+import Products from "@/components/Products/Products";
+import Footer from "@/components/Footer/Footer";
+import QuickView from "@/components/QuickView/QuickView";
 
 import { ProductWeb, QuickPreview } from "../context/ShoppingCart";
 

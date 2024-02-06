@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import CartScrollBar from "../CartScrollBar/CartScrollBar";
-import EmptyCart from "../empty-states/EmptyCart/EmptyCart";
-import { CartContext, Init, ProductLocal } from "../../context/ShoppingCart";
-import styles from "./Header.module.scss";
+import CartScrollBar from "@/components/CartScrollBar/CartScrollBar";
+import EmptyCart from "@/components/empty-states/EmptyCart/EmptyCart";
+import { CartContext, Init, ProductLocal } from "@/context/ShoppingCart";
+import useClickOutside from "@/util/clickOutside";
 
-import useClickOutside from "../../util/clickOutside";
+import styles from "./Header.module.scss";
 
 /* eslint-disable consistent-return */
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Counter from "../../Counter/Counter";
+import Counter from "@/components/Counter/Counter";
+import { ProductLocal, QuickPreview } from "@/context/ShoppingCart";
 import styles from "./ProductItem.module.scss";
-
-import { ProductLocal, QuickPreview } from "../../../context/ShoppingCart";
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable consistent-return */
