@@ -15,13 +15,13 @@ https://next-shopping-cart.vercel.app
 First, goto the project folder and install required dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
 Then to get start by typing:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
