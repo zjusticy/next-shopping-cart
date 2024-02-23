@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import CartScrollBar from "@/components/CartScrollBar/CartScrollBar";
+// import CartScrollBar from "@/components/CartScrollBar/CartScrollBar";
 import EmptyCart from "@/components/empty-states/EmptyCart/EmptyCart";
 import { CartContext, Init, ProductLocal } from "@/context/ShoppingCart";
 import useClickOutside from "@/util/clickOutside";
@@ -19,14 +19,8 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
   const [showCart, flipState] = useState<boolean>(false);
   const [mobileSearch, setSearch] = useState<boolean>(false);
 
-  const {
-    cart,
-    totalItems,
-    totalAmount,
-    removeProduct,
-    bounce,
-    bouceEnd,
-  } = useContext<Init>(CartContext);
+  const { cart, totalItems, totalAmount, removeProduct, bounce, bouceEnd } =
+    useContext<Init>(CartContext);
 
   const cartPreview = useRef<HTMLDivElement>();
 
@@ -115,7 +109,7 @@ const Header = ({ handleSearch, resetSearch, searchValue }: Props) => {
         className={`${styles.cartPreview} ${styles.active}`}
         ref={cartPreview}
       >
-        <CartScrollBar>{view}</CartScrollBar>
+        <div className={styles.cartBlock}>{view}</div>
         <div className={styles.actionBlock}>
           <button
             type="button"

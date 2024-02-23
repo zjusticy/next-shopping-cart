@@ -14,19 +14,17 @@
     "eslint-config-next": "12",
     "next": "12",
     "react": "17",
-    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "17",
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.23",
     "@types/react": "^16.9.43",
-    "@types/react-custom-scrollbars": "^4.0.6",
     "@types/react-transition-group": "^4.4.0",
-    "@typescript-eslint/eslint-plugin": "^3.6.1",
-    "@typescript-eslint/parser": "^3.6.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^7.5.0",
-    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
@@ -35,6 +33,6 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5",
     "sass": "^1.70.0",
-    "typescript": "4.3.2"
+    "typescript": "^5"
   }
 }
